@@ -1,4 +1,15 @@
 (function () {
+  const MARKER_ID = "hb-content-script-marker";
+  if (document.getElementById(MARKER_ID)) return;
+  try {
+    const marker = document.createElement("div");
+    marker.id = MARKER_ID;
+    marker.style.display = "none";
+    document.documentElement.appendChild(marker);
+  } catch (_err) {
+    // If we can't install a marker, continue anyway.
+  }
+
   const PANEL_ID = "hb-panel-root";
 
   let panelRoot = null;
@@ -6,6 +17,7 @@
   let lastRows = [];
   let lastRowCount = 0;
   let lastCopiedOk = false;
+  let userClosed = false;
 
   function setStatus(text, isError) {
     if (!panelRoot) return;
@@ -29,6 +41,47 @@
 
     moreEl.style.display = "block";
     moreEl.textContent = lastCopiedOk ? `... + ${remaining} more rows copied` : `... + ${remaining} more rows`;
+  }
+
+  function openPanel() {
+    ensurePanel();
+    userClosed = false;
+    panelRoot.style.display = "block";
+    renderPreview(lastRows, lastRowCount);
+    if (!panelRoot.querySelector("#hb-status").textContent) {
+      setStatus("Panel ready.", false);
+    }
+  }
+
+  function closePanel() {
+    if (!panelRoot) return;
+    userClosed = true;
+    panelRoot.style.display = "none";
+  }
+
+  function openPanelWithRetry() {
+    // Some PitchBook views re-render and can remove injected nodes shortly
+    // after navigation. Retry briefly so the first click reliably opens.
+    openPanel();
+
+    let attempts = 0;
+    const maxAttempts = 10;
+    const tick = () => {
+      attempts += 1;
+      if (userClosed) return;
+
+      const isMissing = !panelRoot || !panelRoot.isConnected;
+      const isHidden = panelRoot && panelRoot.style.display === "none";
+      if (isMissing || isHidden) {
+        openPanel();
+      }
+
+      if (attempts < maxAttempts) {
+        setTimeout(tick, 120);
+      }
+    };
+
+    setTimeout(tick, 120);
   }
 
   function renderPreview(rows, rowCount) {
@@ -276,10 +329,14 @@
   }
 
   function ensurePanel() {
-    if (panelRoot) return panelRoot;
+    if (panelRoot && panelRoot.isConnected) return panelRoot;
+
+    const existing = document.getElementById(PANEL_ID);
+    if (existing) existing.remove();
 
     panelRoot = document.createElement("div");
     panelRoot.id = PANEL_ID;
+    panelRoot.style.display = "none";
     panelRoot.innerHTML = `
       <div id="hb-panel" style="position:fixed;top:80px;right:16px;width:520px;z-index:2147483647;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;box-shadow:0 8px 20px rgba(2,6,23,.2);font-family:Segoe UI,Tahoma,sans-serif;color:#0f172a;">
         <div style="padding:10px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;font-size:13px;display:flex;justify-content:space-between;align-items:center;">
@@ -310,7 +367,7 @@
     document.documentElement.appendChild(panelRoot);
 
     panelRoot.querySelector("#hb-close").addEventListener("click", () => {
-      panelRoot.style.display = "none";
+      closePanel();
     });
     panelRoot.querySelector("#hb-scrape").addEventListener("click", () => {
       onScrape();
@@ -324,10 +381,11 @@
 
   function togglePanel() {
     ensurePanel();
-    panelRoot.style.display = panelRoot.style.display === "none" ? "block" : "none";
-    if (panelRoot.style.display !== "none") {
-      renderPreview(lastRows, lastRowCount);
-      setStatus("Panel ready.", false);
+    const isHidden = panelRoot.style.display === "none";
+    if (isHidden) {
+      openPanelWithRetry();
+    } else {
+      closePanel();
     }
   }
 
@@ -339,4 +397,6 @@
       sendResponse({ ok: true });
     }
   });
+
+  // Panel is opened via extension icon (message from background).
 })();

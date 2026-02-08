@@ -10,5 +10,12 @@
   },
   "action": {
     "default_title": "PitchBook Data Scraper"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.pitchbook.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }
