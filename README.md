@@ -86,7 +86,7 @@ Then toggle **Developer mode** ON (top-right corner).
 
 ### Step 4 · Load the Extension
 
-Click **Load unpacked** (on the top left) and select the **`phase1-extension`** folder you unzipped.
+Click **Load unpacked** (on the top left). Open the **scraper-main** folder you unzipped and select the **`phase1-extension`** folder inside it.
 
 <!-- 📸 SCREENSHOT: "Load unpacked" button clicked, file picker selecting the folder -->
 <p align="center">
