@@ -56,7 +56,7 @@ Go to the GitHub repository and click **green "Code" button → Download ZIP**.
 
 ### Step 2 · Unzip the Folder
 
-Double click to extract the downloaded `.zip` file. You should see a folder called **`phase1-extension`** inside.
+Double click to extract the downloaded `.zip` file. You should see a folder called **`scraper-main`** inside.
 
 <!-- 📸 SCREENSHOT: File explorer showing the unzipped folder -->
 <p align="center">
