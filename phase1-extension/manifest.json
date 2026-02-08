@@ -1,21 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "scraper",
-  "version": "0.1.1",
-  "description": "In-page scraper with clipboard export.",
+  "name": "PitchBook Data Scraper",
+  "version": "0.1.3",
+  "description": "scrape tables from any pitchbook page in one tap.",
   "permissions": ["activeTab", "clipboardWrite", "scripting"],
   "host_permissions": ["https://*.pitchbook.com/*"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "scraper"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://*.pitchbook.com/*"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
-    }
-  ]
+    "default_title": "PitchBook Data Scraper"
+  }
 }
