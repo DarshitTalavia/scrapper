@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="assets/logo.png" alt="PitchBook Scraper Logo" width="120" />
+<img width="120" height="130" alt="Screenshot 2026-02-08 at 2 26 46 PM" src="https://github.com/user-attachments/assets/62ecce5a-2c52-4a50-b518-ae4217df1522" />
 </p>
-
 <h1 align="center">PitchBook Scraper</h1>
 
 <p align="center">
@@ -51,7 +50,8 @@ Go to the GitHub repository and click **Code → Download ZIP**.
 
 <!-- 📸 SCREENSHOT: GitHub repo page with the green "Code" button open showing "Download ZIP" -->
 <p align="center">
-  <img src="assets/screenshots/01-download-zip.png" alt="Download ZIP from GitHub" width="700" />
+  <img width="700" alt="Screenshot 2026-02-08 at 2 12 02 PM" src="https://github.com/user-attachments/assets/d69df757-0e2e-4549-a5d7-f7f80c05862e" />
+
 </p>
 
 <br/>
@@ -62,7 +62,8 @@ Extract the downloaded `.zip` file. You should see a folder called **`phase1-ext
 
 <!-- 📸 SCREENSHOT: File explorer showing the unzipped folder -->
 <p align="center">
-  <img src="assets/screenshots/02-unzip-folder.png" alt="Unzipped folder" width="700" />
+  <img width="700" alt="Screenshot 2026-02-08 at 2 12 38 PM" src="https://github.com/user-attachments/assets/5b74d90b-3a66-4807-adb5-3d839dbc4d24" />
+
 </p>
 
 <br/>
@@ -79,7 +80,8 @@ Then toggle **Developer mode** ON (top-right corner).
 
 <!-- 📸 SCREENSHOT: chrome://extensions page with Developer mode toggle highlighted -->
 <p align="center">
-  <img src="assets/screenshots/03-developer-mode.png" alt="Enable Developer Mode" width="700" />
+<img width="700" alt="Screenshot 2026-02-08 at 2 13 02 PM" src="https://github.com/user-attachments/assets/0485a84f-1113-436f-a98b-d0b0199ca40e" />
+
 </p>
 
 <br/>
@@ -90,14 +92,16 @@ Click **Load unpacked** and select the **`phase1-extension`** folder you unzippe
 
 <!-- 📸 SCREENSHOT: "Load unpacked" button clicked, file picker selecting the folder -->
 <p align="center">
-  <img src="assets/screenshots/04-load-unpacked.png" alt="Load Unpacked Extension" width="700" />
+ <img width="700" alt="Screenshot 2026-02-08 at 2 13 39 PM" src="https://github.com/user-attachments/assets/55f89ed1-0bb8-41c8-89c1-7d1f4b45b917" />
+
 </p>
 
 The extension should now appear in your extensions list. Pin it for easy access.
 
 <!-- 📸 SCREENSHOT: Extension visible in chrome://extensions list -->
 <p align="center">
-  <img src="assets/screenshots/05-extension-loaded.png" alt="Extension Loaded" width="700" />
+  <img width="700" alt="Screenshot 2026-02-08 at 2 13 45 PM" src="https://github.com/user-attachments/assets/7d309292-7651-4bbf-b88b-f30d5c8061a7" />
+
 </p>
 
 <br/>
@@ -108,7 +112,8 @@ Navigate to any **PitchBook** page and click the extension icon in your toolbar.
 
 <!-- 📸 SCREENSHOT: PitchBook page with the side panel open -->
 <p align="center">
-  <img src="assets/screenshots/06-panel-open.png" alt="Extension Panel on PitchBook" width="700" />
+  <img width="700" alt="Screenshot 2026-02-08 at 2 16 59 PM" src="https://github.com/user-attachments/assets/b05c00e9-f9c4-4fd6-b2b2-d0dac661c012" />
+
 </p>
 
 <br/>
@@ -117,16 +122,12 @@ Navigate to any **PitchBook** page and click the extension icon in your toolbar.
 
 Go to a **PitchBook Search Results** page and click the **"Scrape"** button in the panel.
 
-<!-- 📸 SCREENSHOT: Search results page with "Scrape" button highlighted -->
-<p align="center">
-  <img src="assets/screenshots/07-click-scrape.png" alt="Click Scrape" width="700" />
-</p>
-
 You'll see a **preview of the first row** in the panel, and the full dataset is copied to your clipboard.
 
 <!-- 📸 SCREENSHOT: Panel showing the preview of scraped data -->
 <p align="center">
-  <img src="assets/screenshots/08-scrape-preview.png" alt="Scrape Preview" width="700" />
+<img width="700"  alt="Screenshot 2026-02-08 at 2 25 17 PM" src="https://github.com/user-attachments/assets/f4f129d5-7ae5-4222-bd37-b4adf60a750f" />
+
 </p>
 
 <br/>
@@ -137,7 +138,8 @@ Open **Excel** (or Google Sheets) and hit **Ctrl+V** / **⌘+V**. Your data will
 
 <!-- 📸 SCREENSHOT: Excel with the pasted data nicely in columns -->
 <p align="center">
-  <img src="assets/screenshots/09-paste-excel.png" alt="Paste into Excel" width="700" />
+ <img width="700" alt="Screenshot 2026-02-08 at 2 26 23 PM" src="https://github.com/user-attachments/assets/cc1a47fd-df27-4e9d-a0f9-0d1866238764" />
+
 </p>
 
 <br/>
