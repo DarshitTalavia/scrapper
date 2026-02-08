@@ -46,9 +46,7 @@ Follow the steps below to go from **downloading the extension → scraping data 
 
 ### Step 1 · Download the Extension
 
-Go to the GitHub repository and click **Code → Download ZIP**.
-
-<!-- 📸 SCREENSHOT: GitHub repo page with the green "Code" button open showing "Download ZIP" -->
+Go to the GitHub repository and click **green "Code" button → Download ZIP**.
 <p align="center">
   <img width="700" alt="Screenshot 2026-02-08 at 2 12 02 PM" src="https://github.com/user-attachments/assets/d69df757-0e2e-4549-a5d7-f7f80c05862e" />
 
@@ -58,7 +56,7 @@ Go to the GitHub repository and click **Code → Download ZIP**.
 
 ### Step 2 · Unzip the Folder
 
-Extract the downloaded `.zip` file. You should see a folder called **`phase1-extension`** inside.
+Double click to extract the downloaded `.zip` file. You should see a folder called **`phase1-extension`** inside.
 
 <!-- 📸 SCREENSHOT: File explorer showing the unzipped folder -->
 <p align="center">
@@ -88,7 +86,7 @@ Then toggle **Developer mode** ON (top-right corner).
 
 ### Step 4 · Load the Extension
 
-Click **Load unpacked** and select the **`phase1-extension`** folder you unzipped.
+Click **Load unpacked** (on the top left) and select the **`phase1-extension`** folder you unzipped.
 
 <!-- 📸 SCREENSHOT: "Load unpacked" button clicked, file picker selecting the folder -->
 <p align="center">
