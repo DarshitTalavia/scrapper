@@ -158,7 +158,7 @@
     panelRoot.innerHTML = `
       <div id="hb-panel" style="position:fixed;top:80px;right:16px;width:380px;z-index:2147483647;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;box-shadow:0 8px 20px rgba(2,6,23,.2);font-family:Segoe UI,Tahoma,sans-serif;color:#0f172a;">
         <div style="padding:10px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;font-size:13px;display:flex;justify-content:space-between;align-items:center;">
-          <span>Scrapper</span>
+          <span>scraper</span>
           <button id="hb-close" style="border:none;background:transparent;font-size:16px;cursor:pointer;line-height:1;">x</button>
         </div>
         <div style="padding:10px 12px;display:flex;flex-direction:column;gap:10px;">
