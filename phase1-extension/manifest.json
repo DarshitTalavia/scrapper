@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Scrapper",
+  "version": "0.1.1",
+  "description": "In-page scraper with clipboard export.",
+  "permissions": ["activeTab", "clipboardWrite", "scripting"],
+  "host_permissions": ["https://*.pitchbook.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Scrapper"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.pitchbook.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
